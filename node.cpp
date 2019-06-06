@@ -1,12 +1,12 @@
-#include "square.h"
+#include "node.h"
 
-Square::Square() :
+Node::Node() :
     QGraphicsItem()
 {
 
 }
 
-Square::~Square()
+Node::~Node()
 {
 
 }
@@ -32,7 +32,7 @@ Connector::~Connector()
 
 }
 
-QRectF Square::boundingRect() const
+QRectF Node::boundingRect() const
 {
     return QRectF(-600,-600,600,600);   // Ограничиваем область, в которой лежит прямоугольник
 }
@@ -47,7 +47,7 @@ QRectF Connector::boundingRect() const
     return QRectF(-600,-600,600,600);   // Ограничиваем область, в которой лежит прямоугольник
 }
 
-void Square::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+void Node::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
         QPolygon polygon;   // Создаем ссылку на объект класса QPoligon
         // Помещаем координаты точек в полигональную модель
@@ -77,6 +77,3 @@ void Connector::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
     Q_UNUSED(option);
     Q_UNUSED(widget);
 }
-
-
-
