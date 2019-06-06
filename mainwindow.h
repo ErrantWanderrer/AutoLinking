@@ -5,7 +5,7 @@
 #include <QGraphicsScene>
 #include <QXmlStreamReader>
 
-#include <square.h>
+#include <node.h>
 
 namespace Ui {
 class MainWindow;
@@ -20,9 +20,9 @@ public:
 
     QGraphicsScene  *scene;
 
-    Square        *square;
-    Square        *square1;
-    Square        *square2;
+    Node        *node;
+    Node        *node1;
+    Node        *node2;
 
     Programm     *prog;
     Programm     *prog1;
@@ -34,26 +34,40 @@ public:
     Connector *con2;
     Connector *con3;
 
-    struct squareCoord
+    struct nodeCoordinates   // структура с координатами узлов
     {
         int x;
         int y;
     };
 
-    struct progCoord
+    struct progCoordinates   // структура с координатами программ
     {
         int x;
         int y;
+        nodeCoordinates parent;
     };
 
-    squareCoord squareOne; //относительные координаты для программ
-    squareCoord squareTwo;
+    struct connCoordinates   // структура с координатами коннектеров
+    {
+        int x;
+        int y;
+        progCoordinates parent;
+    };
 
-    progCoord progZero;   //относительные координаты для коннекторов
-    progCoord progOne;
-    progCoord progTwo;
-    progCoord progThree;
+    /*Объявление объектов для присваивания координат*/
+    nodeCoordinates node_0;
+    nodeCoordinates node_1;
+    nodeCoordinates node_2;
 
+    progCoordinates prog_0;
+    progCoordinates prog_1;
+    progCoordinates prog_2;
+    progCoordinates prog_3;
+
+    connCoordinates con_0;
+    connCoordinates con_1;
+    connCoordinates con_2;
+    connCoordinates con_3;
 
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
@@ -62,9 +76,6 @@ public slots:
     void on_rebuild_clicked();
 
 private:
-
-         // Объявляем графическую сцену
-
 
 };
 
