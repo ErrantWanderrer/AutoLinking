@@ -1,14 +1,14 @@
-#ifndef SQUARE_H
-#define SQUARE_H
+#ifndef NODE_H
+#define NODE_H
 
 #include <QGraphicsItem>
 #include <QPainter>
 
-class Square : public QGraphicsItem
+class Node : public QGraphicsItem
 {
 public:
-    Square();
-    ~Square();
+    Node();
+    ~Node();
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 
 protected:
@@ -43,4 +43,4 @@ protected:
     QRectF boundingRect() const;
 };
 
-#endif // SQUARE_H
+#endif // NODE_H
