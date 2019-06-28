@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Objects>
+	<node_0 presence="true">
+		<prog_0 presence="true">
+			<con_0 presence="true"></con_0>
+			<con_3 presence="true"></con_3>
+		</prog_0>
+		<prog_2 presence="true">
+		</prog_2>
+	</node_0>
+	<node_1 presence="true">
+		<prog_1 presence="true">
+			<con_1 presence="true"></con_1>
+		</prog_1>
+	</node_1>
+	<node_2 presence="true">
+		<prog_3 presence="true">
+			<con_2 presence="true"></con_2>
+		</prog_3>
+	</node_2>
+</Objects>
+<Connections>
+<connection_1>con_0/con_1</connection_1>
+<connection_2>con_2/con_3</connection_2>
+</Connections>
